@@ -1,3 +1,4 @@
+import 'package:finance_mate/pages/LoginPage.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -39,23 +40,30 @@ class OnboardingPage extends StatelessWidget {
           ),
           SizedBox(height: 80,),
 
-          Container(
-            height: MediaQuery.of(context).size.height*0.068,
-            width: MediaQuery.of(context).size.width*0.6,
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return Loginpage();
+              }));
+            },
+            child: Container(
+              height: MediaQuery.of(context).size.height*0.068,
+              width: MediaQuery.of(context).size.width*0.8,
 
-            decoration: BoxDecoration(
-              color: Colors.lightBlue,
-              border: Border.all(color: Colors.blueGrey)
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Get Started",
-              textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 27,
-                  fontWeight: FontWeight.bold
+              decoration: BoxDecoration(
+                color: Colors.lightBlue,
+                border: Border.all(color: Colors.blueGrey)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Get Started",
+                textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold
+                  ),
+
                 ),
-
               ),
             ),
           ),

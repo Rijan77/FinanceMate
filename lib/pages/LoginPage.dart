@@ -30,7 +30,7 @@ class _LoginpageState extends State<Loginpage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: "email",
+                  labelText: "Email",
                   prefixIcon: Icon(Icons.email),
                   border: OutlineInputBorder(
                   )
@@ -46,7 +46,7 @@ class _LoginpageState extends State<Loginpage> {
                 obscureText: !_isPasswordVisible,
                 obscuringCharacter: "*",
                 decoration: InputDecoration(
-                  labelText: "password",
+                  labelText: "Password",
                   prefixIcon: Icon(Icons.lock),
                   suffixIcon: IconButton(onPressed: (){
                     setState(() {
@@ -63,7 +63,7 @@ class _LoginpageState extends State<Loginpage> {
             SizedBox(height: 10,),
             Padding(
               padding:  EdgeInsets.only(left:screenHeight*0.24),
-              child: Text("Forgot Password?..",
+              child: Text("Forgot Password?",
               style: TextStyle(
                 decoration: TextDecoration.underline,
                 fontSize: 14,
@@ -77,12 +77,15 @@ class _LoginpageState extends State<Loginpage> {
             Container(
               height: screenHeight*0.068,
               width: screenWidth*0.85,
-              color: Color(0xff1A3D6F),
+              decoration: BoxDecoration(
+                  color: Color(0xff1A3D6F),
+                borderRadius: BorderRadius.circular(10)
+              ),
 
               child: Center(
                 child: Text("Login", style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 25,
                   fontWeight: FontWeight.w800
                 ),),
               ),
@@ -96,7 +99,11 @@ class _LoginpageState extends State<Loginpage> {
             Container(
               height: screenHeight*0.068,
               width: screenWidth*0.85,
-              color: Color(0xff3FA9F5),
+              // color: Color(0xff3FA9F5),
+              decoration: BoxDecoration(
+                  color: Color(0xff3FA9F5),
+                borderRadius: BorderRadius.circular(10)
+              ),
 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

@@ -18,7 +18,7 @@ class OnboardingPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 80,),
+          const SizedBox(height: 80,),
 
 
           Container(
@@ -28,7 +28,7 @@ class OnboardingPage extends StatelessWidget {
                 color: Colors.transparent,
                 border: Border.all(color: Colors.black, width: 2),
             ),
-            child: Center(
+            child: const Center(
               child: Text("Take control of your finances with FinanceMate. Track spending, set budgets, and save smarter.",
               textAlign: TextAlign.center,
                 style: TextStyle(
@@ -38,12 +38,12 @@ class OnboardingPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 80,),
+          const SizedBox(height: 80,),
 
           GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return Loginpage();
+                return const Loginpage();
               }));
             },
             child: Container(
@@ -54,8 +54,8 @@ class OnboardingPage extends StatelessWidget {
                 color: Colors.lightBlue,
                 border: Border.all(color: Colors.blueGrey)
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text("Get Started",
                 textAlign: TextAlign.center,
                   style: TextStyle(

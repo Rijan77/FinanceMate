@@ -1,4 +1,3 @@
-import 'package:finance_mate/pages/Onboarding%20Screen.dart';
 import 'package:finance_mate/pages/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Splashscreen(),
+      home:  const Splashscreen(),
     );
   }
 }

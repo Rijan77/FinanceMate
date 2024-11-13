@@ -26,9 +26,9 @@ class _LoginpageState extends State<Loginpage> {
                 height: screenHeight*0.24,),
               ),
             ),
-            SizedBox(height: 100,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            const SizedBox(height: 100,),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
                   labelText: "Email",
@@ -39,7 +39,7 @@ class _LoginpageState extends State<Loginpage> {
               ),
             ),
 
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -48,7 +48,7 @@ class _LoginpageState extends State<Loginpage> {
                 obscuringCharacter: "*",
                 decoration: InputDecoration(
                   labelText: "Password",
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                   suffixIcon: IconButton(onPressed: (){
                     setState(() {
                       _isPasswordVisible = !_isPasswordVisible;
@@ -56,15 +56,15 @@ class _LoginpageState extends State<Loginpage> {
                   }, icon: Icon(
                     _isPasswordVisible ? Icons.visibility: Icons.visibility_off,
                   )),
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                   )
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Padding(
               padding:  EdgeInsets.only(left:screenHeight*0.24),
-              child: Text("Forgot Password?",
+              child: const Text("Forgot Password?",
               style: TextStyle(
                 decoration: TextDecoration.underline,
                 fontSize: 14,
@@ -73,17 +73,17 @@ class _LoginpageState extends State<Loginpage> {
               ),
               ),
             ),
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
 
             Container(
               height: screenHeight*0.068,
               width: screenWidth*0.85,
               decoration: BoxDecoration(
-                  color: Color(0xff1A3D6F),
+                  color: const Color(0xff1A3D6F),
                 borderRadius: BorderRadius.circular(10)
               ),
 
-              child: Center(
+              child: const Center(
                 child: Text("Login", style: TextStyle(
                   color: Colors.white,
                   fontSize: 25,
@@ -91,18 +91,18 @@ class _LoginpageState extends State<Loginpage> {
                 ),),
               ),
             ),
-            SizedBox(height: 10,),
-            Text("OR", style: TextStyle(
+            const SizedBox(height: 10,),
+            const Text("OR", style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 15
             ),),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Container(
               height: screenHeight*0.068,
               width: screenWidth*0.85,
               // color: Color(0xff3FA9F5),
               decoration: BoxDecoration(
-                  color: Color(0xff3FA9F5),
+                  color: const Color(0xff3FA9F5),
                 borderRadius: BorderRadius.circular(10)
               ),
 
@@ -112,8 +112,8 @@ class _LoginpageState extends State<Loginpage> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Image.asset("lib/assets/google.png", height: 35, width: 35,),
                   ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20),
                       child: Text("Continue with Google", style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -132,7 +132,7 @@ class _LoginpageState extends State<Loginpage> {
                   fontWeight: FontWeight.w500
                 ),),
                 TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Registrationpage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Registrationpage()));
                 }, child: Text("Sign up",
                     style: TextStyle(color: Colors.blueAccent, fontSize: screenHeight*0.023, fontWeight: FontWeight.w600)))
               ],

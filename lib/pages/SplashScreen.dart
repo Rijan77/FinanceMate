@@ -15,7 +15,7 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
     // Navigate to the onboarding screen after a delay
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement<void, void>(
         context,
         MaterialPageRoute<void>(
@@ -34,8 +34,8 @@ class _SplashscreenState extends State<Splashscreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("lib/assets/Logo.png", height: 350, width: 350),
-            SizedBox(height: 30),
-            CircularProgressIndicator(
+            const SizedBox(height: 30),
+            const CircularProgressIndicator(
               color: Colors.white,
             ),
           ],

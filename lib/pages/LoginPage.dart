@@ -1,3 +1,4 @@
+import 'package:finance_mate/pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 
 class Loginpage extends StatefulWidget {
@@ -130,7 +131,9 @@ class _LoginpageState extends State<Loginpage> {
                   fontSize: screenHeight * 0.022,
                   fontWeight: FontWeight.w500
                 ),),
-                TextButton(onPressed: (){}, child: Text("Sign up",
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Registrationpage()));
+                }, child: Text("Sign up",
                     style: TextStyle(color: Colors.blueAccent, fontSize: screenHeight*0.023, fontWeight: FontWeight.w600)))
               ],
             )

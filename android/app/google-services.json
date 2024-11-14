@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "458992485208",
+    "project_id": "finance-mate-ea2e7",
+    "storage_bucket": "finance-mate-ea2e7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458992485208:android:718e40784df20c9a369b2d",
+        "android_client_info": {
+          "package_name": "com.example.finance_mate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458992485208-dnlgbq8nor5sum95ijek938ee2upihsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC83hd4JqF_55svP0Hk_c4ioEktMHyQd5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458992485208-dnlgbq8nor5sum95ijek938ee2upihsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

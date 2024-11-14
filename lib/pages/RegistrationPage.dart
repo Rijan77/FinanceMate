@@ -1,4 +1,5 @@
 import 'package:finance_mate/pages/LoginPage.dart';
+import 'package:finance_mate/pages/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class Registrationpage extends StatefulWidget {
@@ -11,6 +12,30 @@ class Registrationpage extends StatefulWidget {
 class _RegistrationpageState extends State<Registrationpage> {
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
+  final AuthService _authService = AuthService();
+
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+
+  //Handle Registration with email and password
+
+  void _handleRegisterWithEmail(){
+    _authService.registerWithEmail(
+      _nameController.text,
+      _emailController.text,
+      _passwordController.text,
+      _confirmPasswordController.text,
+    );
+  }
+
+  //Handle Google sign_In
+  void _handleGoogleSignIn(){
+    _authService.signInWithGoogle();
+  }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -29,8 +54,8 @@ class _RegistrationpageState extends State<Registrationpage> {
                 child: Row(
                     children: [
                   Image.asset("lib/assets/Logo_3.png", height: 100, width: 100,),
-                     Padding(
-                       padding: const EdgeInsets.only(top: 20),
+                     const Padding(
+                       padding: EdgeInsets.only(top: 20),
                        child: Text(" Get Started with \n   Finance Mate", style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
@@ -41,7 +66,7 @@ class _RegistrationpageState extends State<Registrationpage> {
                     ]),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Container(
               height: screenHeight*0.82,
               width: double.infinity,
@@ -54,8 +79,9 @@ class _RegistrationpageState extends State<Registrationpage> {
                 padding: const EdgeInsets.only(top: 100, left: 10, right: 10),
                 child: Column(
                   children: [
-                    const TextField(
-                      decoration: InputDecoration(
+                    TextField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
                         labelText: "Enter your name",
                         prefixIcon: Icon(Icons.person),
                         enabledBorder: OutlineInputBorder(
@@ -67,8 +93,10 @@ class _RegistrationpageState extends State<Registrationpage> {
                       ),
                     ),
                     const SizedBox(height: 20,),
-                    const TextField(
-                      decoration: InputDecoration(
+
+                    TextField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(
                         labelText: "Enter your email",
                         prefixIcon: Icon(Icons.email_outlined),
                         enabledBorder: OutlineInputBorder(
@@ -81,6 +109,7 @@ class _RegistrationpageState extends State<Registrationpage> {
                     ),
                     const SizedBox(height: 20,),
                     TextField(
+                      controller: _passwordController,
                       obscureText: !_isPasswordVisible,
                       obscuringCharacter: "*",
                       decoration: InputDecoration(
@@ -103,6 +132,7 @@ class _RegistrationpageState extends State<Registrationpage> {
                     ),
                     const SizedBox(height: 20,),
                     TextField(
+                      controller: _confirmPasswordController,
                       obscureText: !_isConfirmPasswordVisible,
                       obscuringCharacter: "*",
                       decoration: InputDecoration(
@@ -124,20 +154,23 @@ class _RegistrationpageState extends State<Registrationpage> {
 
                     const SizedBox(height: 40,),
 
-                    Container(
-                      height: screenHeight*0.068,
-                      width: screenWidth*0.85,
-                      decoration: BoxDecoration(
-                          color: const Color(0xff1A3D6F),
-                          borderRadius: BorderRadius.circular(10)
-                      ),
+                    GestureDetector(
+                      onTap: _handleRegisterWithEmail,
+                      child: Container(
+                        height: screenHeight*0.068,
+                        width: screenWidth*0.85,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff1A3D6F),
+                            borderRadius: BorderRadius.circular(10)
+                        ),
 
-                      child: const Center(
-                        child: Text("Sign up", style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800
-                        ),),
+                        child: const Center(
+                          child: Text("Sign up", style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800
+                          ),),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 10,),
@@ -146,30 +179,33 @@ class _RegistrationpageState extends State<Registrationpage> {
                         fontSize: 15
                     ),),
                     const SizedBox(height: 10,),
-                    Container(
-                      height: screenHeight*0.068,
-                      width: screenWidth*0.85,
-                      // color: Color(0xff3FA9F5),
-                      decoration: BoxDecoration(
-                          color: const Color(0xff3FA9F5),
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Image.asset("lib/assets/google.png", height: 35, width: 35,),
+                    GestureDetector(
+                      onTap: _handleGoogleSignIn,
+                      child: Container(
+                        height: screenHeight*0.068,
+                        width: screenWidth*0.85,
+                        // color: Color(0xff3FA9F5),
+                        decoration: BoxDecoration(
+                            color: const Color(0xff3FA9F5),
+                            borderRadius: BorderRadius.circular(10)
                         ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Text("Continue with Google", style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800
-                            ),),
-                          )
-                        ],
+
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Image.asset("lib/assets/google.png", height: 35, width: 35,),
+                          ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text("Continue with Google", style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800
+                              ),),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -183,7 +219,7 @@ class _RegistrationpageState extends State<Registrationpage> {
                             fontWeight: FontWeight.w500
                         ),),
                         TextButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Loginpage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const Loginpage()));
                         }, child: Text("Login",
                             style: TextStyle(color: Colors.blueAccent, fontSize: screenHeight*0.023, fontWeight: FontWeight.w600)))
                       ],

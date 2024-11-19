@@ -11,6 +11,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue.shade50,
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start, // Aligns items to the top
         children: [
@@ -23,10 +24,13 @@ class _HomepageState extends State<Homepage> {
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(25),
               ),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: Image.asset("lib/assets/Rijan.jpg", fit: BoxFit.cover,)),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 39, left: 12),
+          const Padding(
+            padding: EdgeInsets.only(top: 39, left: 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -50,28 +54,28 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 40, left: 100),
+            padding: const EdgeInsets.only(top: 40, left: 110),
             child: Container(
-              height: 60,
-              width: 60,
+              height: 55,
+              width: 55,
               decoration: BoxDecoration(
-                color: Colors.grey.shade200,
+                color: Colors.black12,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_on_rounded),
+              child: IconButton(onPressed: (){}, icon: const Icon(Icons.notifications_on_rounded, color: Colors.black,),
               iconSize: 35,),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 40, left: 10),
             child: Container(
-              height: 60,
-              width: 60,
+              height: 55,
+              width: 55,
               decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
+                  color: Colors.black12,
                   borderRadius: BorderRadius.circular(20)
               ),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.settings,),
+              child: IconButton(onPressed: (){}, icon: const Icon(Icons.settings, color: Colors.black,),
               iconSize: 35,),
             ),
           )

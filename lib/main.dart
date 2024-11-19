@@ -1,5 +1,4 @@
-import 'package:finance_mate/pages/HomePage.dart';
-import 'package:finance_mate/pages/SplashScreen.dart';
+import 'package:finance_mate/pages/LoginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  const Homepage(),
+      home:  const Loginpage(),
     );
   }
 }
